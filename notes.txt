@@ -1,0 +1,17 @@
+NOTES
+
+`Assets/Scripts/Player.cs :7` 
+===
+- [SerializeField]
+private var but make it visable to unity
+
+`Assets/Scripts/Player.cs :27` 
+===
+- Time.deltaTime
+fps-speed thingy
+
+`Assets/Scripts/Player.cs :29` 
+===
+- Slerp/Lerp
+slerp -> spherically
+smooth transition
