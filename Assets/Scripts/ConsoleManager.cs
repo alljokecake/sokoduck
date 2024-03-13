@@ -54,9 +54,11 @@ public class ConsoleManager : MonoBehaviour
     void Start() {
     }
 
+// ----------------------------------------------------------------------------
+//     - Spawn/Draw Logic -
+// ----------------------------------------------------------------------------
     void Update() {
-        // unfocused + F1 = activate
-        // @FIXME: logic mistakes everywhere FIXIT !!
+        // @FIXME: active input field at start
         if (consoleBox.text != "") {
             if (Input.GetKeyDown(KeyCode.Return)) {
                 RunCommand(consoleBox.text);
@@ -123,7 +125,7 @@ public class ConsoleManager : MonoBehaviour
 }
 
 // @FIXME: has nothing to do with the console commands
-//         refactor it! 
+//         rename it! 
 [System.Serializable]
 public class Command {
     public string text;
