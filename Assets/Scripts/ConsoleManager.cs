@@ -58,21 +58,12 @@ public class ConsoleManager : MonoBehaviour
 //     - Spawn/Draw Logic -
 // ----------------------------------------------------------------------------
     void Update() {
-        // @FIXME: active input field at start
+        consoleBox.ActivateInputField();
         if (consoleBox.text != "") {
             if (Input.GetKeyDown(KeyCode.Return)) {
                 RunCommand(consoleBox.text);
                 consoleBox.text = "";
-                consoleBox.ActivateInputField();
-            } else if (Input.GetKeyDown(KeyCode.F1)) {
-                if (consoleBox.isFocused) {
-                    consoleBox.ActivateInputField();
-                }
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.F1)) {
-            consoleBox.ActivateInputField();
         }
     }
 
