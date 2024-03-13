@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ConsoleManager : MonoBehaviour
 {
     public int maxHistory = 25;
+
+    // @O: chatPanel, textObject
+    public GameObject consolePanel, textObject;
 
     // @O: messageList
     [SerializeField]
@@ -23,12 +28,19 @@ public class ConsoleManager : MonoBehaviour
     // @O: SendMessageToChat
     public void InputText(string text) {
         if (commandHistory.Count >= maxHistory) {
+            Destroy(commandHistory[0].textObject.gameObject);
             commandHistory.Remove(commandHistory[0]);
         }
 
         Command newCommand = new Command();
 
         newCommand.text = text;
+
+        GameObject newText = Instantiate(textObject, consolePanel.transform);
+
+        newCommand.textObject = newText.GetComponent<TMP_Text>();
+
+        newCommand.textObject.text = newCommand.text;
 
         commandHistory.Add(newCommand);
     }
@@ -38,4 +50,5 @@ public class ConsoleManager : MonoBehaviour
 [System.Serializable]
 public class Command {
     public string text;
+    public TMP_Text textObject;
 }
