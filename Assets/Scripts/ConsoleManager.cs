@@ -10,6 +10,7 @@ public class ConsoleManager : MonoBehaviour
 
     // @O: chatPanel, textObject
     public GameObject consolePanel, textObject;
+    public TMP_InputField consoleBox;
 
     // @O: messageList
     [SerializeField]
@@ -18,10 +19,30 @@ public class ConsoleManager : MonoBehaviour
     void Start() {
     }
 
+    // @O: chatBox
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-           InputText("space");
-           Debug.Log("Space");
+        if (consoleBox.text != "") {
+            if (Input.GetKeyDown(KeyCode.Return)) {
+                // @T: process command
+                InputText(consoleBox.text);
+                consoleBox.text = "";
+                consoleBox.ActivateInputField();
+            }
+        } else {
+            if(!consoleBox.isFocused && Input.GetKeyDown(KeyCode.F1)) {
+                consoleBox.ActivateInputField();
+            }
+
+            else if(consoleBox.isFocused && Input.GetKeyDown(KeyCode.F1)) {
+                consoleBox.DeactivateInputField();
+            }
+        }
+
+
+        if(consoleBox.isFocused) {
+            // disable wasd
+        } else {
+            // enable wasd
         }
     }
 

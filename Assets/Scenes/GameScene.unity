@@ -517,6 +517,7 @@ MonoBehaviour:
   consolePanel: {fileID: 127094921}
   textObject: {fileID: 7633252926489567865, guid: ea96b51b1995e3c478203c0c22cbf0da,
     type: 3}
+  consoleBox: {fileID: 2033173781}
   commandHistory: []
 --- !u!4 &176881025
 Transform:
@@ -1979,7 +1980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000024289, y: 99.77269}
+  m_AnchoredPosition: {x: 0.000024289, y: 99.1}
   m_SizeDelta: {x: 800, y: 18.8546}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2033173781
