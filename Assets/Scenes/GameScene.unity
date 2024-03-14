@@ -513,7 +513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ad6e8ed0de7e84cb8175e7e8079f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHistory: 25
   consolePanel: {fileID: 127094921}
   textObject: {fileID: 7633252926489567865, guid: ea96b51b1995e3c478203c0c22cbf0da,
     type: 3}
@@ -1101,7 +1100,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 15
   m_Viewport: {fileID: 1930166486}
   m_HorizontalScrollbar: {fileID: 445509771}
   m_VerticalScrollbar: {fileID: 473970787}
