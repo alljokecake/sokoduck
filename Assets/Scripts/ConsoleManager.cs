@@ -21,6 +21,7 @@ public class ConsoleManager : MonoBehaviour
 //     - Manage Commands -
 // ----------------------------------------------------------------------------
 
+    // @TODO: store commands in a hash table
     private Dictionary<string, Action<string[]>> commands;
 
     public ConsoleManager () {
@@ -91,11 +92,11 @@ public class ConsoleManager : MonoBehaviour
     }
 
     Color Colorize(Command.Type type) {
-        Color info = Color.green;
-        Color warning = Color.yellow;
-        Color error = Color.red;
-        Color debug = Color.magenta;
-        Color userInput = Color.white;
+        Color info = Color.white;
+        Color warning = new Color(0.902f, 0.784f, 0.745f, 1f);
+        Color error = Color.yellow;
+        Color debug = Color.red;
+        Color userInput = Color.green;
 
         Color color = info;
 
