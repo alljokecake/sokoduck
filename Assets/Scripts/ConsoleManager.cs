@@ -29,6 +29,8 @@ public class ConsoleManager : MonoBehaviour
         RegisterCommand("level", LevelCommand);
         RegisterCommand("clear", ClearCommand);
         RegisterCommand("help", HelpCommand);
+        RegisterCommand("example_debug", ExampleDebugCommand);
+        RegisterCommand("example_warning", ExampleWarningCommand);
     }
 
     public void RunCommand(string input) {
@@ -89,11 +91,11 @@ public class ConsoleManager : MonoBehaviour
     }
 
     Color Colorize(Command.Type type) {
-        Color info = new Color(147f / 255f, 161f / 255f, 161f / 255f);
-        Color warning = new Color(181f / 255f, 137f / 255f, 0f);
-        Color error = new Color(220f / 255f, 50f / 255f, 47f / 255f);
-        Color debug = new Color(108f / 255f, 113f / 255f, 196f / 255f);
-        Color userInput = new Color(1f, 1f, 1f);
+        Color info = Color.green;
+        Color warning = Color.yellow;
+        Color error = Color.red;
+        Color debug = Color.magenta;
+        Color userInput = Color.white;
 
         Color color = info;
 
@@ -142,6 +144,26 @@ public class ConsoleManager : MonoBehaviour
         InputText("- clear", Command.Type.Info);
         InputText("- level", Command.Type.Info);
     }
+
+    private void ExampleDebugCommand(string[] args) {
+        InputText("This is a debug output", Command.Type.Debug);
+        InputText("This is a debug output", Command.Type.Debug);
+        InputText("This is a debug output", Command.Type.Debug);
+        InputText("This is a debug output", Command.Type.Debug);
+        InputText("This is a debug output", Command.Type.Debug);
+        InputText("This is a debug output", Command.Type.Debug);
+        InputText("This is a debug output", Command.Type.Debug);
+    }
+
+    private void ExampleWarningCommand(string[] args) {
+        InputText("This is a warning output", Command.Type.Warning);
+        InputText("This is a warning output", Command.Type.Warning);
+        InputText("This is a warning output", Command.Type.Warning);
+        InputText("This is a warning output", Command.Type.Warning);
+        InputText("This is a warning output", Command.Type.Warning);
+        InputText("This is a warning output", Command.Type.Warning);
+        InputText("This is a warning output", Command.Type.Warning);
+    }
 }
 
 // @FIXME: has nothing to do with the console commands
@@ -156,10 +178,10 @@ public class Command {
 
     public enum Type
     {
-        Info,       // (147, 161, 161) blue
-        Warning,    // (181, 137, 0) yellow
-        Error,      // (220, 50, 47) red
-        Debug,      // (108, 113, 196) violet
-        UserInput   // (255, 255, 255) white
+        Info,
+        Warning,
+        Error,
+        Debug,
+        UserInput
     }
 }
